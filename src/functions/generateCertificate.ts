@@ -6,10 +6,9 @@ interface ICreateCertificate {
   grade: string;
 }
 
-exports.handle = async (event) => {
+export const handle = async (event) => {
+  // id, name, grade =
   const { id, name, grade } = JSON.parse(event.body) as ICreateCertificate;
-
-  console.log("aaa");
 
   await document
     .put({
